@@ -1,0 +1,39 @@
+<% include ./partials/header %>
+
+<div class="ui divided  container segment center aligned">
+
+    <div class="item">
+
+        <div class="content">
+            <h2 class="header">
+                <%= showdog.title %>
+            </h2>
+            <div class="image">
+                <img class="ui big image center aligned container" src="<%= showdog.image %>" alt="dog">
+            </div>
+            <a href="/dogs/<%= showdog._id %>/edit" class="mini ui red button">Edit Post</a>
+
+            <form id="button" action="/dogs/<%= showdog._id %>?_method=DELETE" method='POST'>
+                <button class="mini ui red button">Delete Post</button>
+            </form>
+
+            <div class="meta">
+                <span>Description</span>
+            </div>
+            <div class="description">
+                <p>
+                    <%= showdog.body %>
+                </p>
+            </div>
+            <div class="extra">
+                <span>
+                    <%= showdog.created.toDateString() %></span>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<% include ./partials/footer %>

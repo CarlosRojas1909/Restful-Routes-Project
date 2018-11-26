@@ -1,0 +1,42 @@
+<% include ./partials/header %>
+
+<% alldogs.forEach(function(dog){ %>
+<div class="ui divided  container segment center aligned">
+
+    <div class="item">
+
+        <div class="content">
+            <h2 class="header">
+                <%= dog.title %>
+            </h2>
+            <div class="image">
+                <img class="ui big image center aligned container" src="<%= dog.image %>" alt="dog">
+            </div>
+            <div class="meta">
+                <span>Description</span>
+            </div>
+            <div class="description">
+                <p><%= dog.body.substring(0, 100) %></p> 
+                 <div>
+                        <a href="/dogs/<%= dog._id %>" class="mini ui red button">Read More</a>
+                        
+
+                 </div>   
+                    
+                
+
+            </div>
+            <div class="extra">
+                <span>
+                    <%= dog.created.toDateString() %>
+                </span>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<% }) %>
+
+<% include ./partials/footer %>
